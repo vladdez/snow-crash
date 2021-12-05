@@ -1,0 +1,5 @@
+gdb getflag
+b * 0x0804898e 
+r
+jump *0x08048de5
+c

