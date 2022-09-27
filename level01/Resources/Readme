@@ -1,3 +1,6 @@
+# method: cipher cracking  
+# utility: john 
+
 find / -name 'passwd' 2>/dev/null
 cat /etc/passwd | grep flag01
 
@@ -8,4 +11,6 @@ scp -P 5000 level00@192.168.56.1:/../../../etc/passwd .
 # crack it 
 ./john passwd
 ./john passwd --show
+.\john.exe --show .\passwd # windows
+..\Downloads\john-1.9.0-jumbo-1-win64\run\john.exe --show .\passwd
 #passwd - abcdefg

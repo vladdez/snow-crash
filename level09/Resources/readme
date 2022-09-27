@@ -1,3 +1,5 @@
-scp -P 5000 level09@192.168.56.1:~/token level09/Resources/.
+scp -P 5000 scp://level02@localhost/level02.pcap C:/Users/Vlad/snow-crash
+scp -P 5000 scp://level09@localhost/token C:/Users/Vlad/snow-crash
+
 su flag09 F3iji1ju5yuevaus41q1afiuq
 getflag

@@ -1,7 +1,12 @@
+./ltrace ./level13
 gdb ./level13
-disassemble main
-# 0x0804859a <+14>:    cmp    $0x1092,%eax
+disas main
+# 0x0804859a <+14>:    cmp    $0x1092,%eax # comparison operation 
 b * 0x0804859a
-r
-set $eax=4242
-c
+r # run
+set $eax=4242 # change register
+c # continue
+
+# getuid - get user identity 
+# GDB -  online compiler and debugger for C/C++
+# eax - extended (32 bit) register for temporary data storage

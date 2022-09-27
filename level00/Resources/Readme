@@ -1,3 +1,6 @@
+# cracking ceasar cipher
+
+getent passwd
 find / -user flag00 2>/dev/null
 cat /usr/sbin/john
 su flag00
@@ -5,10 +8,14 @@ getflag
 su level01
 
 # search files by criterias
+# Executables used for system maintenance and/or administrative tasks usually are placed in /usr/sbin.
 # find / - поиск в корневой папке = поиск на всем компьютере
 # 2>/dev/null will filter out the errors so that they will not be output to your console.
-# -user — владелец: имя пользователя или UID. OUr user is flag00
+# -user — владелец: имя пользователя или UID. Our user is flag00
 # Если при поиске возникает ошибка (например — 
 #нет доступа чтения из каталога) то вывод команды становится менее информативным. Перенаправьте вывод STDERR в /dev/null.
 # https://www.dcode.fr/caesar-cipher
 # answer - nottoohardhere
+
+# A des-crypt hash string consists of 13 characters
+# Logic: 1) see all users 2) find user flag00 3) see what files are related with it

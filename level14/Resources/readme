@@ -1,5 +1,16 @@
+cat /etc/passwd # get the number of the level
+
 gdb getflag
-b * 0x0804898e 
-r
-jump *0x08048de5
-c
+disass main
+# 67 - defence: ptrace gdb detection
+# 72 - defence: comparison 
+# 452 - comparison
+# 444 - 
+b *(main + 72)
+b *(main + 444)
+info register $eax # -1
+set $eax=0
+n # next step
+set $eax=444
+
+su flag14
