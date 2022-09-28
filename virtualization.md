@@ -1,5 +1,5 @@
 # VM
-attacjint to NAT
+attaching to NAT
 
 # port forwarding
 ssh - TCP - port 5000 - port 4242

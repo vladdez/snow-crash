@@ -1,10 +1,18 @@
 # snow-crash
 
+short statistics of 15 attacks: 
+- Man in The Middle file spoofing: 5
+- cipher cracking: 3
+- code injection: 3
+- binary analysis: 2
+- cyclical file spoofing : 1
+- password sniffing: 1
+
 Levels:
 0.
 # attack: cipher cracking  
 # utility: https://www.dcode.fr/caesar-cipher 
-# hint: 
+# hint: Intra video
 
 1.
 # attack: cipher cracking  
@@ -15,7 +23,7 @@ Levels:
 2.
 # attack: password sniffing (trafic analysis) 
 # untilies: wireshark
-# hint: 43 packet in nmap file
+# hint: 43th packet in nmap file
 
 3.
 # attack: MITM file spoofing
@@ -67,29 +75,34 @@ Levels:
 11.
 # attack: code injection
 # method: through localhost?
-# vulnerability: string interpolation in lua ".. x .."
+# vulnerability 1: string interpolation in lua ".. x .."
+# vulnerability 2: SUID permission excalation
 # exploited functions: popen, echo
 # additional language: lua
 
 12.
 # attack: code injection
-# vulnerability: string interpolation in perl "$x"
+# vulnerability 1: string interpolation in perl "$x"
+# vulnerability 2: SUID permission excalation
 # additional language: perl
 # used functions: curl
 # method: inject a command using localhost, but use regex as argument to pass through defence inside the code
 # defence: lowercase to uppercase, more than one letter
 
 13.
-# attack: password spoofing during disassembling and debugging
+# attack: binary analysis
 # hint: ./ltrace ./level13 - we expected 4242
 # exploited function: getuid, cmp
-# method: find comparing register and change it
+# method: find register with user id and change it to the id of the user with higher rights
 # used functions: gdb (disass, r, set,  c)
+# hint: 
 
 14.
-# attack: password spoofing during disassembling and debugging
-# defence: ptrace - blocks any attempt to change anything using gdb
+# attack: binary analysis
+# defence: ptrace - with any use of gdb outputs an error
+# exploited function: getuid, test, ptrace
 # used functions: gdb (disass, r, n, info register/print, set,  c)
+# method: change resigters for ptrace and getuids results
 
 #########
 

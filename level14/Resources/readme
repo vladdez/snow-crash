@@ -3,14 +3,21 @@ cat /etc/passwd # get the number of the level
 gdb getflag
 disass main
 # 67 - defence: ptrace gdb detection
-# 72 - defence: comparison 
-# 452 - comparison
-# 444 - 
+# 72 - defence: comparison of two eax (input and password) by TEST instruction
+# 439 - getuid - get user identity, return the ID of the user calling the process 
+# 444 - getuid puts its result into registry eax
 b *(main + 72)
 b *(main + 444)
 info register $eax # -1
 set $eax=0
 n # next step
-set $eax=444
+set $eax=3014
 
 su flag14
+
+# ptrace (process trace) - allows tracing of any program executions. Used in debuggers. 
+# But only one tracing in a time is possible. 
+# So if a program trace itself alredy, you can not trace and debug it. Second tracing attempt will give -1
+
+
+# PLT - Procedure Linkage Table which is, put simply, used to call external procedures/functions whose address isn't known in the time of linking

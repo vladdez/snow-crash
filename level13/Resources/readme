@@ -4,7 +4,7 @@ disas main
 # 0x0804859a <+14>:    cmp    $0x1092,%eax # comparison operation 
 b * 0x0804859a
 r # run
-set $eax=4242 # change register
+set $eax=4242 # or 0x1092 - change register
 c # continue
 
 # getuid - get user identity 
