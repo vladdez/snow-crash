@@ -23,7 +23,7 @@ Levels:
 2.
 # attack: password sniffing (trafic analysis) 
 # untilies: wireshark
-# hint: 43th packet in nmap file
+# hint: .nmap file
 
 3.
 # attack: MITM file spoofing

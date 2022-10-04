@@ -4,5 +4,5 @@
 #https://ru.wikipedia.org/wiki/Pcap
 scp -P 5000 scp://level02@localhost/level02.pcap C:/Users/Vlad/snow-crash
 chmod 777 level02.pcap 
-# open Wireshark -> 43 -> follow -> TCP Stream : ft_waNDReL0L
+# open Wireshark -> any TCP packet -> follow -> TCP Stream : ft_waNDReL0L
 # token kooda2puivaav1idi4f57q8iq
