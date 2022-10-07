@@ -11,7 +11,7 @@ short statistics of 15 attacks:
 # Levels:
 
 ## 0.
--  attack: cipher cracking  
+- attack: cipher cracking  
 - utility: https://www.dcode.fr/caesar- cipher 
 - hint: Intra video
 
@@ -24,7 +24,7 @@ short statistics of 15 attacks:
 ## 2.
 - attack: password sniffing (trafic analysis) 
 - untilies: wireshark
-- hint: .nmap file
+- hint: .nmap file, Intra video
 
 ## 3.
 - attack: MITM file spoofing
@@ -34,7 +34,8 @@ short statistics of 15 attacks:
 
 ## 4.
 - attack: MITM file spoofing
-- vulnerability: SUID permission excalation, commmon gateway interface
+- vulnerability: SUID permission excalation
+- method: HTML link injection
 - used functions: netstat - lt, curl
 
 ## 5.
@@ -46,13 +47,13 @@ short statistics of 15 attacks:
 - attack: code injection
 - vulnerability: string interpolation in PHP "$x"
 - exploited functions: preg_replace with \e modifier
-- used functions: echo
+- used functions: echo, exec
 - additional language: PHP
 
 ## 7.
 - attack: MITM file spoofing?
 - vulnerability: SUID permission excalation?
-- method: changing environemntal variable LOGNAME
+- method: changing environmental variable LOGNAME
 - used functions: export
 
 ## 8.
@@ -106,9 +107,6 @@ short statistics of 15 attacks:
 - method: change resigters for ptrace and getuids results
 
 # Old
-
-Метод решения с дизассемблированием
-Ida - анализатор бинарных файлов. С дизассемблированием и графом системных вызовов
 
 Части ассемблера
 
