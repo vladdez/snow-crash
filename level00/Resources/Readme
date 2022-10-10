@@ -1,7 +1,10 @@
 # cracking ceasar cipher
 
 getent passwd
+ll -R / 2>dev/null | grep flag00
 find / -user flag00 2>/dev/null
+
+
 cat /usr/sbin/john
 su flag00
 getflag

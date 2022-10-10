@@ -13,53 +13,64 @@ short statistics of 15 attacks:
 ## 0.
 - attack: cipher cracking  
 - utility: https://www.dcode.fr/caesar- cipher 
-- hint: Intra video
+- hint: flag00, Intra video
 
 ## 1.
 - attack: cipher cracking  
-- vulnerability: unprotected DES password hash for flag01 in /etc/passwd
+- vulnerability: unhashed DES (data encrypthion standart) password for flag01 in /etc/passwd
 - utility: john 
 - hint: /usr/sbin/john from previous level
 
 ## 2.
 - attack: password sniffing (trafic analysis) 
-- untilies: wireshark
+- untilies: wireshark, tcpdump
+- method: read TCP-data in IP packet
 - hint: .nmap file, Intra video
 
 ## 3.
 - attack: MITM file spoofing
-- vulnerability: SUID permission excalation  
-- method: adding new path to PATH
-- used functions: export, echo
+- vulnerability1: SUID permission excalation 
+- vulnerability2: relative path for echo  
+- method: add new path to PATH, alias getflag as echo, use getflag intead of echo
+- exploited function: system, echo
+- used functions: export 
+- hint: system("/usr/bin/env echo Exploit me"Exploit me
 
 ## 4.
 - attack: MITM file spoofing
 - vulnerability: SUID permission excalation
-- method: HTML link injection
-- used functions: netstat - lt, curl
+- method: HTML link injection via netcat request
+- exploited function: ``, echo
+- used functions1: netstat - lt, curl
+- used functions2: nc (GET)
+- hint: CGI
 
 ## 5.
 - attack: MITM file spoofing
-- vulnerability: cron file permission excalation
+- vulnerability: SUID permission excalation
+- exploited function: cron
+- method: alias getflag in the target folder
 - hint: cronfile in mail
 
 ## 6.
 - attack: code injection
 - vulnerability: string interpolation in PHP "$x"
-- exploited functions: preg_replace with \e modifier
+- exploited functions: preg_replace with \e pattern modifier
 - used functions: echo, exec
 - additional language: PHP
 
 ## 7.
-- attack: MITM file spoofing?
-- vulnerability: SUID permission excalation?
+- attack: MITM file spoofing
+- vulnerability: SUID permission excalation
+- exploited functions: system
 - method: changing environmental variable LOGNAME
 - used functions: export
 
 ## 8.
 - attack: MITM file spoofing
-- vulnerability: SUID permission excalation?
-- method: same soft link for two files
+- vulnerability: SUID permission excalation
+- defence: you can no put arguments with the name token - strstr("token", "token")
+- method: soft link with other name to argument token
 - used functions: ln
 
 ## 9.
@@ -68,10 +79,10 @@ short statistics of 15 attacks:
 - untility: python custom code
 
 ## 10.
-- attack: cyclical file spoofing 
-- exploited function: access
-- vulnerability: time between check and access
-- method: two loops in different windows
+- attack: cyclical file spoofing (race conditions)
+- exploited function: access, open
+- vulnerability: delay between using of access (check privelegies) and open
+- method: two loops in different windows where one file pass access, and other file pass open
 - used functions: ln - sf, nc - l
 
 ## 11.
@@ -106,7 +117,7 @@ short statistics of 15 attacks:
 - used functions: gdb (disass, r, n, info register/print, set,  c)
 - method: change resigters for ptrace and getuids results
 
-# Old
+# Hacking all passwords
 
 Части ассемблера
 

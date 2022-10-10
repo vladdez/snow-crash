@@ -4,5 +4,16 @@
 #https://ru.wikipedia.org/wiki/Pcap
 scp -P 5000 scp://level02@localhost/level02.pcap C:/Users/Vlad/snow-crash
 chmod 777 level02.pcap 
+# dump - list of TCP packets
 # open Wireshark -> any TCP packet -> follow -> TCP Stream : ft_waNDReL0L
 # token kooda2puivaav1idi4f57q8iq
+
+
+ tcpdump -n -r level02.pcap -Xq
+ # n - do not conver addreses to names
+ # r - read
+ # -X - packet data in hex and ASCII
+ # -q - quick, print less
+
+ # IP packet - IP-header + IP-data
+ # IP-data = TCP-header + TCP-data

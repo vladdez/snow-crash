@@ -3,3 +3,4 @@
 ltrace ./level07
 echo $LOGNAME
 export LOGNAME=\`getflag\` ; ./level07
+export LOGNAME='$(getflag)' ; ./level07

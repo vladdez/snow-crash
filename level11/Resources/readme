@@ -12,3 +12,6 @@
 
 # programm checks the password with argument -> programm echo the password in popen
 # -> instead of password send getflag as argument
+
+
+# function waits for password and hashes it

