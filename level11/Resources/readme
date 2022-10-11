@@ -9,7 +9,7 @@
  cat /tmp/f11
 
 # netcat - read and writes data across network connections uscing TCP or UDP
-# -z - port scanning (no data connection or transfering, just report open or runnimg ports)
+# -z - port scanning (no data connection or transfering, just report open or running ports)
 # -v - verbose
 
 # programm checks the password with argument -> programm echo the password in popen
