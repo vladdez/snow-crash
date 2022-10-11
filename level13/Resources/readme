@@ -1,12 +1,20 @@
 ./ltrace ./level13
+id # get your id
+objdump -d level13
+
 gdb ./level13
-disas main
-# 0x0804859a <+14>:    cmp    $0x1092,%eax # comparison operation 
-b * 0x0804859a
+b getuid
 r # run
+
 set $eax=4242 # or 0x1092 - change register
 c # continue
+
+#or
+jump 0x80485cb
 
 # getuid - get user identity 
 # GDB -  online compiler and debugger for C/C++
 # eax - extended (32 bit) register for temporary data storage
+
+# binary call getuid, compare login with eax, if okay - je (jump equal)
+# 4242 = 0x1092

@@ -87,7 +87,7 @@ short statistics of 15 attacks:
 
 ## 11.
 - attack: code injection
-- method: through localhost?
+- method: send argeument in password
 - vulnerability 1: string interpolation in lua ".. x .."
 - vulnerability 2: SUID permission excalation
 - exploited functions: popen, echo
@@ -100,15 +100,16 @@ short statistics of 15 attacks:
 - additional language: perl
 - used functions: curl
 - method: inject a command using localhost, but use regex as argument to pass through defence inside the code
-- defence: lowercase to uppercase, more than one letter
+- defence: lowercase to uppercase, delete string with whitespace
 
 ## 13.
 - attack: binary analysis
 - hint: ./ltrace ./level13 -  we expected 4242
 - exploited function: getuid, cmp
-- method: find register with user id and change it to the id of the user with higher rights
-- used functions: gdb (disass, r, set,  c)
-- hint: 
+- method1: find register with user id and change it to the id of the user with higher rights
+- method2: breakpoint on geuid, jump on the string with je (jump if equal)
+- used functions: gdb (disass, r, set, c, jump), objdump
+- hint: UID 42 should run this binary
 
 ## 14.
 - attack: binary analysis

@@ -1,19 +1,21 @@
 cat /etc/passwd # get the number of the level
+id
 
 gdb getflag
 disass main
+
 # 67 - defence: ptrace gdb detection
 # 72 - defence: comparison of two eax (input and password) by TEST instruction
 # 439 - getuid - get user identity, return the ID of the user calling the process 
 # 444 - getuid puts its result into registry eax
 b *(main + 72)
 b *(main + 444)
+r
 info register $eax # -1
 set $eax=0
 n # next step
 set $eax=3014
-
-su flag14
+c
 
 # ptrace (process trace) - allows tracing of any program executions. Used in debuggers. 
 # But only one tracing in a time is possible. 
