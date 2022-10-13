@@ -10,7 +10,7 @@ set $eax=4242 # or 0x1092 - change register
 c # continue
 
 #or
-jump 0x80485cb
+jump *0x80485cb
 
 # getuid - get user identity 
 # GDB -  online compiler and debugger for C/C++

