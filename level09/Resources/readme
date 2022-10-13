@@ -1,4 +1,5 @@
 scp -P 5000 scp://level09@localhost/token C:/Users/Vlad/snow-crash
+python break.py `cat token`
 
 su flag09 F3iji1ju5yuevaus41q1afiuq
 getflag
