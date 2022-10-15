@@ -34,6 +34,7 @@ short statistics of 15 attacks:
 - method: add new path to PATH, alias getflag as echo, use getflag intead of echo
 - exploited function: system, echo
 - used functions: export 
+- file function: system() executes shell command
 - hint: system("/usr/bin/env echo Exploit me"Exploit me
 
 ## 4.
@@ -43,13 +44,18 @@ short statistics of 15 attacks:
 - exploited function: ``, echo
 - used functions1: netstat - lt, curl
 - used functions2: nc (GET)
-- hint: CGI
+- file function:
+	- use CGI (perl library for CGI requests) to get a parameter (qw - quote word, a paraemter separator)
+	- pass argument using query string (the portion of a URI beginning with ?), which became env variable 
+	- $_ - special varibale to pass an argument
+- hint: use CGI qw{param};
 
 ## 5.
 - attack: MITM file spoofing
 - vulnerability: SUID permission excalation
-- exploited function: cron
+- exploited function: bash
 - method: alias getflag in the target folder
+- file function: cronfile runs every 2 minutes openarenserver which read files in opt and execute them
 - hint: cronfile in mail
 
 ## 6.
@@ -58,11 +64,15 @@ short statistics of 15 attacks:
 - exploited functions: preg_replace with \e pattern modifier
 - used functions: echo, exec
 - additional language: PHP
+- hint: PHP file
+- file function: 
+	- php: x uses y, r uses x, print r
+	- reads and outputs the ctent of the argument file
 
 ## 7.
 - attack: MITM file spoofing
 - vulnerability: SUID permission excalation
-- exploited functions: system
+- exploited functions: system, getenv
 - method: changing environmental variable LOGNAME
 - used functions: export
 
